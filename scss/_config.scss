@@ -1,0 +1,35 @@
+$light-color: #f4f4f4;
+$font-stack: 'Segoe UI', Helvetica, sans-serif;
+$primary-color: #444;
+$show-home-image: true;
+$home-img: url(../img/create-section1.jpg);
+$background-opacity: 0.9;
+$secondary-color: #eece1a; 
+
+
+// media query mixins
+@mixin media-sm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+    
+}
+@mixin media-md {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+    
+}
+@mixin media-lg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+    
+}
+@mixin media-xl {
+    @media screen and (max-width: 1171px) {
+        @content;
+    }
+    
+}
+

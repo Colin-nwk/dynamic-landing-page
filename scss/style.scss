@@ -1,0 +1,38 @@
+@import './resets';
+
+@import './config';
+
+
+body{
+	font-family: $font-stack;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+	color: black;
+}
+
+#time{
+	font-size: 8rem;
+}
+h1{
+	margin-bottom: 3rem;
+}
+h2{
+	margin-bottom: 0.5rem;
+	opacity: 0.8;
+}
+	
+.morning{
+	background: url('/dist/img/mountain1.jpg') center center/cover;
+		// &::after{
+		// 	content: '';
+		// 	top: 0;
+		// 	left: 0;
+		// 	opacity: .8;
+		// }
+	}
+
+@import './media';
