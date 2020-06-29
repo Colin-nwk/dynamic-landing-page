@@ -39,7 +39,7 @@ function setBgGreet(){
 
     if(hour < 12){
         // morning
-        document.body.style.backgroundImage = "url('/dist/img/mountain1.jpg')";
+        document.body.style.backgroundImage = "url('/dist/img/main.jpg')";
         greeting.textContent = 'Good Morning';
         
         // bg.classList.add('morning');
@@ -57,8 +57,57 @@ function setBgGreet(){
     }
 }
 
+// get name
+function getName(){
+    if(localStorage.getItem('name')=== null){
+        name.textContent = '[enter name]';
+    }else{
+        name.textContent = localStorage.getItem('name');
+    }
+}
 
+// set name
+function setName(e){
+    if(e.type === 'keypress'){
+        // make sure enter is pressed
+        if(e.which == 13 || e.keyCode == 13){
+            localStorage.setItem('name', e.target.innerHTML);
+            name.blur();
+        }
+    }else {
+        localStorage.setItem('name', e.target.innerHTML);
+    }
+}
+// set focus
+function setFocus(e){
+    if(e.type === 'keypress'){
+        // make sure enter is pressed
+        if(e.which == 13 || e.keyCode == 13){
+            localStorage.setItem('focus', e.target.innerHTML);
+            name.blur();
+        }
+    }else {
+        localStorage.setItem('focus', e.target.innerHTML);
+    }
+}
+
+// get focus
+function getFocus(){
+    if(localStorage.getItem('focus')=== null){
+        focus.textContent = '[enter your focus]';
+    }else{
+        focus.textContent = localStorage.getItem('focus');
+    }
+}
+
+// event listeners
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
 
 // run
 showTime();
 setBgGreet();
+getName();
+getFocus();
