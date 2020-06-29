@@ -5,8 +5,8 @@ const time = document.getElementById('time'),
       name =document.getElementById('name'),
       focus =document.getElementById('focus');
 
-//mine due to img link in js not working
-// const bg = document.querySelector('.bg')
+// options
+const showAmPm = true;
 
 
 // show time
@@ -23,7 +23,7 @@ function showTime(){
     hour = hour % 12 || 12 ;
 
     // output time
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
 
     setTimeout(showTime, 1000);
 }
@@ -84,7 +84,7 @@ function setFocus(e){
         // make sure enter is pressed
         if(e.which == 13 || e.keyCode == 13){
             localStorage.setItem('focus', e.target.innerHTML);
-            name.blur();
+            focus.blur();
         }
     }else {
         localStorage.setItem('focus', e.target.innerHTML);
