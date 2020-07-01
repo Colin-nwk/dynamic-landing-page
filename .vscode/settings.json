@@ -9,5 +9,10 @@
             "savePath": "/dist/css"
         }
     ],
-    "liveServer.settings.port": 5500
+    "liveServer.settings.port": 5500,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#27310A",
+        "titleBar.activeBackground": "#37450D",
+        "titleBar.activeForeground": "#F9FCEF"
+    }
 }
